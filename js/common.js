@@ -11,9 +11,6 @@
 	createTabs($(".tabs_group li a") , $(".content_tab")   );
 	createTabs($(".plans_group li a"), $(".plans_content") );
 
-
-	
-
 	$('#mobile_menu span').click(function() {
 		var $mobMenu = $('#mobile_menu ul');
 
@@ -65,8 +62,8 @@ function scrollToAnchor() {
 	var $root = $('html, body');
 	var offS = 250;
 
-	if($(window).width() <= 380) {
-		offS = 0;
+	if( $(window).width() <= 430 ) {
+		offS = 170;
 	}
 	$('#mobile_menu a').not('[href="#location"]').click(function() {
 		$root.animate({
@@ -78,14 +75,14 @@ function scrollToAnchor() {
 
 function scrollToLocation() {
 	var $rootL = $('html, body');
-	var offSL = 300;
+	var offSL = 310;
 
-	if($(window).width() <= 380) {
-		offSL = 0;
+	if($(window).width() <= 430) {
+		offSL = 170;
 	}
 	$('#mobile_menu a[href="#location"]').click(function() {
 		$rootL.animate({
-			scrollTop: $( $.attr(this, 'href') ).offset().top - 300
+			scrollTop: $( $.attr(this, 'href') ).offset().top - offSL
 		}, 500);
 		return false;
 	});
